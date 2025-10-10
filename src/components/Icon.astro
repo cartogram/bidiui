@@ -1,5 +1,9 @@
+---
+import { theme } from "../theme.ts";
+---
 
-<svg
+<span class="Icon">
+  <svg
     viewBox="0 0 45 48"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -20,11 +24,24 @@
         <line x1="41.91" y1="22.03" x2="0" y2="22.03" id="Path"></line>
       </g>
     </g>
-
-    <style>
-        * { color: #000; }
-        @media (prefers-color-scheme: dark) {
-            * { color: #FFF; }
-        }
-    </style>
   </svg>
+
+  <style define:vars={{ colorForeground: theme.color.foreground }}>
+    .Icon {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      vertical-align: middle;
+      position: relative;
+      top: 0.1rem;
+    }
+
+    :dir(rtl) .Icon {
+      transform: scaleX(-1);
+    }
+
+    .Icon:dir(rtl) {
+      transform: scaleX(-1);
+    }
+  </style>
+</span>

@@ -1,5 +1,13 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from "astro/config";
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+    experimental: {
+        fonts: [{
+            provider: fontProviders.google(),
+            name: "Readex Pro",
+            cssVariable: "--font-readex-pro",
+            weights: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+
+        }]
+    }
+});
