@@ -111,7 +111,6 @@ import { theme } from "../theme.ts";
 
   a {
     color: inherit;
-    text-decoration-skip-ink: all;
     text-decoration: none;
     display: flex;
     align-items: baseline;
@@ -120,6 +119,7 @@ import { theme } from "../theme.ts";
   }
 
   a:hover {
+	text-decoration-skip-ink: all;
     text-decoration: underline;
     underline-offset: 0.2em;
     underline-thickness: 0.1em;
@@ -132,16 +132,33 @@ import { theme } from "../theme.ts";
     position: relative;
   }
 
-  section {
+
+  footer {
     flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
   }
 
-  section::after,
+
+  footer::after {
+    content: "BI-DI-UI";
+    display: block;
+	writing-mode: vertical-rl;
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-end: 0;
+	padding: var(--sizeBase);
+	font-size: var(--sizeBase);
+	font-weight: 300;
+	word-break: keep-all;
+  }
+
   header::after {
     content: "";
     display: block;
     width: 100%;
-    height: 0.2rem;
+    height: 0.5rem;
     background-color: currentColor;
     inset-block-end: 0;
     inset-inline-start: 0;
@@ -156,6 +173,5 @@ import { theme } from "../theme.ts";
     border-radius: var(--sizeBase);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
 </style>
