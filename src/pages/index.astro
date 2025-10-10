@@ -1,4 +1,5 @@
 ---
+import { Content } from "../content/ui-in-a-bi-directional-web.md";
 import Head from "../components/Head.astro";
 import Icon from "../components/Icon.astro";
 import { theme } from "../theme.ts";
@@ -38,6 +39,9 @@ import { theme } from "../theme.ts";
           front-end developers.
         </h2>
       </section>
+	  <!-- <section class="formatted">
+		<Content />
+	  </section> -->
       <section>
         <h2>Table of Contents</h2>
         <ul>
@@ -66,6 +70,7 @@ import { theme } from "../theme.ts";
     colorForeground: theme.color.foreground,
     colorBackground: theme.color.background,
   }}
+  is:global
 >
   *,
   *::before,
@@ -89,7 +94,11 @@ import { theme } from "../theme.ts";
   h1,
   h2,
   h3,
+  h4,
+  h5,
+  h6,
   li,
+  blockquote p,
   p {
     padding: 0;
     margin: 0;
@@ -98,14 +107,45 @@ import { theme } from "../theme.ts";
     text-wrap: balance;
     line-height: 1.35;
   }
+
   h2 {
 	text-decoration: underline;
 	underline-offset: 0.2em;
 	underline-thickness: 0.1em;
+	padding: 0 0 var(--sizeBase) 0;
+  }
+
+  h3 {
+	font-size: 1.5rem;
   }
 
   p {
-    font-size: 2rem;
+    font-size: 1.75rem;
+	padding: 0 0 var(--sizeBase) 0;
+	max-width: 35em;
+	text-wrap: pretty;
+  }
+
+  .formatted h2 {
+	text-decoration: none;
+	max-width: 20em;
+	padding-top: var(--sizeBase);
+	margin-top: var(--sizeBase);
+	
+  }
+
+  blockquote p {
+	padding: 0 0 var(--sizeBase) 0;
+  }
+
+  .formatted ul {
+	padding: 0 0 var(--sizeBase) 0;
+  }
+
+  .formatted li {
+	font-size: 1.75rem;
+	max-width: 35em;
+	text-wrap: pretty;
   }
 
   ul {
@@ -142,6 +182,7 @@ import { theme } from "../theme.ts";
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+	min-height: 20em;
   }
 
 
