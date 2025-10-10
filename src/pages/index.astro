@@ -1,8 +1,7 @@
 ---
-import { Content } from "../content/ui-in-a-bi-directional-web.md";
-import Head from "../components/Head.astro";
-import Icon from "../components/Icon.astro";
-import { theme } from "../theme.ts";
+import { getHeadings } from "../content/ui-in-a-bi-directional-web.md";
+
+const _headings = getHeadings();
 ---
 
 <html lang="en" dir="ltr">
@@ -39,19 +38,15 @@ import { theme } from "../theme.ts";
           front-end developers.
         </h2>
       </section>
-	  <!-- <section class="formatted">
-		<Content />
-	  </section> -->
-      <section>
-        <h2>Table of Contents</h2>
-        <ul>
-          <li>
-            <a href="https://reactsummit.us/">
-              UI in a bi-directional web<br />React Summit 2025<br />(Upcoming)<Icon />
-            </a>
-          </li>
-        </ul>
-      </section>
+	 
+	  <section class="Content">
+		<h2>Table of Contents</h2>
+		<ul>	
+		{headings.map((heading) => (
+		  <li><a href={`#${heading.slug}`}>{heading.text}</a></li>
+		))}
+		</ul>
+	  </section>
       <footer>
         <ul>
           <li>

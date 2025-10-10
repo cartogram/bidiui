@@ -6,9 +6,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "biome check --write ."
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.7",
     "astro": "^5.14.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.5"
   }
 }
