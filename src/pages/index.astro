@@ -1,7 +1,9 @@
 ---
+import Head from "../components/Head.astro";
 import { getHeadings } from "../content/ui-in-a-bi-directional-web.md";
+import { theme } from "../theme.ts";
 
-const _headings = getHeadings();
+const headings = getHeadings();
 ---
 
 <html lang="en" dir="ltr">
